@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.collection-page {
+  padding: 0;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Life Savers', serif;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+h3 {
+  font-family: 'Montez', cursive;
+  font-size: 35px;
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column {
+  flex: 1 1 30%;
+  max-width: 30%;
+  padding: 0 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-image, .hover-image {
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+  display: block;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-container:hover .hover-image {
+  opacity: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.size-options {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.image-container:hover .size-options {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.size-text {
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.scrolling-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  background: #f0f0f0;
+  padding: 10px 0;
+  box-shadow: 1px 1px 1px 1px #adcdd6;
+  border-radius: 5px;
+}
+
+.scrolling-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left-right 10s linear infinite;
+  font-size: 1.2em;
+  color: #333;
+}
+
+@keyframes scroll-left-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.clothing-description {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 1em;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: aliceblue;
+}
+
+.new-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-section .column {
+  flex: 1 1 45%;
+  max-width: 45%;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+  .new-section .column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

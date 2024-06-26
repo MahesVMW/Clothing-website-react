@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap');
+
+.item-details-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  padding: 20px;
+}
+
+.item-details-content {
+  background: rgb(196, 245, 237);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px; 
+}
+
+.item-details-content:hover {
+  box-shadow: 2px 2px 2px 2px #d5ebf2;
+}
+
+.item-details-wrapper {
+  display: flex;
+  flex-direction: column; 
+}
+
+.item-details-image {
+  width: 100%; 
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.item-details-info {
+  font-family: "Playwrite NG Modern", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-details-info h2 {
+  font-size: 22px;
+  color: rgb(30, 57, 57);
+}
+
+.item-details-info.desc {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.back-btn {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.add-to-cart-btn, .btnRemove {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.btnRemove {
+  background-color: #cf3d3d !important;
+}
+
+.notification {
+  position: fixed;
+  top: 50px;
+  left: 100px; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  z-index: 1000;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.5s forwards; 
+}
+
+@keyframes slideIn {
+  from {
+    left: -300px; 
+  }
+  to {
+    left: 20px; 
+  }
+}
+
+.notification.success {
+  background-color: green;
+}
+
+.notification.error {
+  background-color: red;
+}
+
+.notification.success::before,
+.notification.error::before {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+@media (min-width: 600px) {
+  .item-details-wrapper {
+    flex-direction: row; 
+  }
+
+  .item-details-image {
+    width: 300px; 
+    margin-right: 20px; 
+    margin-bottom: 0; 
+  }
+
+  .add-to-cart-btn, .btnRemove {
+    width: 35%; 
+  }
+}
